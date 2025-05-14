@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "private":"true",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

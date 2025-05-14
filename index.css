@@ -1,0 +1,265 @@
+.chatbot-container {
+  /* max-width: 600px; */
+  margin: 20px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.chat-window {
+  height: 400px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.message {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 12px;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.avatar {
+  width: 30px;
+  height: 30px;
+  margin: 0 8px;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.text-bubble {
+  background-color: #e0e0e0;
+  padding: 10px 14px;
+  border-radius: 15px;
+  max-width: 65%;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+}
+
+.text-bubble .text {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.text-bubble .time {
+  font-size: 10px;
+  text-align: right;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.dark {
+  background-color: #121212;
+  color: white;
+}
+
+.dark .chat-window {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+}
+
+.dark .text-bubble {
+  background-color: #333;
+  color: white;
+}
+
+.input-form {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input-form input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-form button {
+  padding: 12px 20px;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.input-form button:disabled {
+  background-color: #cccccc;
+  border-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.dark-mode-toggle {
+  margin-bottom: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #0056b3;
+}
+
+.api-error-banner {
+  background-color: #ffcccc;
+  color: #d8000c;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.dark .api-error-banner {
+  background-color: #330000;
+  color: #ff8080;
+}
+
+/* Scrollbar styling */
+.chat-window::-webkit-scrollbar {
+  width: 8px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.chat-window::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.dark .chat-window::-webkit-scrollbar-track {
+  background: #2a2a2a;
+}
+
+.dark .chat-window::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+.dark .chat-window::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+/* Add to your existing CSS */
+
+.input-form {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.input-form input[type="email"],
+.input-form input[type="text"] {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+}
+
+.input-form button {
+  padding: 12px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.input-form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.input-form button:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+/* OTP resend button specific style */
+.input-form button:nth-child(3) {
+  background-color: #6c757d;
+}
+
+.input-form button:nth-child(3):hover:not(:disabled) {
+  background-color: #5a6268;
+}
+
+/* Tablet view */
+
+@media (max-width:768){
+  .chatbot-container{
+    padding: 15px;
+    font-size: 0.95rem;
+    color: #0056b3;
+  }
+  .chat-window{
+    padding: 15px;
+    font-size: 0.95rem;
+    color: #0056b3;
+  }
+  .message{
+    flex-direction: column;
+  }
+  .input-form{
+    flex-direction: column;
+  }
+}
+
+/* Mobile View */
+
+@media (max-width:480px){
+  .chatbot-container{
+    padding: 10px;
+    font-size: 0.9rem;
+    color: red;
+}
+.chat-window{
+  padding: 10px;
+  font-size: 0.95rem;
+  color: red;
+}
+.message{
+  flex-direction: column;
+}
+.input-form{
+  flex-direction: column;
+}
+.input-form button {
+  width: 100%;
+}
+}
